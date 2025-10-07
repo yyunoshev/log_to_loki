@@ -1,0 +1,8 @@
+### 2.8. MANIFEST.in
+
+include README.md
+include LICENSE
+include requirements.txt
+recursive-include src *.py
+recursive-exclude * pycache
+recursive-exclude * *.py[co]

@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "log-to-loki"
+dynamic = ["version"]
+description = "Python library for sending logs to Grafana Loki with batching support"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Yunoshev Yaroslav", email = "yunoshev.dev@gmail.com"},
+]
+keywords = ["logging", "loki", "grafana", "observability", "monitoring"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: System :: Logging",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "twine",
+    "build",
+]
+
+[project.urls]
+Homepage = "https://github.com/yyunoshev/log-to-loki"
+"Bug Tracker" = "https://github.com/yyunoshev/log-to-loki/issues"
+Documentation = "https://github.com/yyunoshev/log-to-loki#readme"
+"Source Code" = "https://github.com/yyunoshev/log-to-loki"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "log_to_loki.__version__"}
